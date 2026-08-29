@@ -49,7 +49,7 @@ export default function Marketplace() {
           <Icon name="cart" size={17} />
           <span className="market-cart-count mono">{cartCount}</span>
           <span className="market-cart-divider" />
-          <span className="market-cart-total mono">₹{cartTotal.toLocaleString()}</span>
+          <span className="market-cart-total mono">₦{cartTotal.toLocaleString()}</span>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function Marketplace() {
 
                 <div className="product-price-row">
                   <span className="product-price mono">
-                    ₹{p.price}
+                    ₦{p.price}
                     <span className="product-unit">/{p.unit}</span>
                   </span>
                   <span className="product-stock">{p.stock.toLocaleString()} {p.unit} in stock</span>

@@ -17,6 +17,10 @@ export const env = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
   cookieSecure: (process.env.COOKIE_SECURE || 'false') === 'true',
+  // Hardware integration: shared key the Arduino/bridge sends in x-device-key.
+  deviceKey: process.env.DEVICE_KEY || '',
+  // Optional: pin device readings to a specific farm (defaults to the first farm).
+  deviceFarmId: process.env.DEVICE_FARM_ID || '',
 }
 
 export const isProd = env.nodeEnv === 'production'

@@ -8,22 +8,22 @@ export const demoUser = {
 }
 
 export const demoFarm = {
-  name: 'Shivneri Estate',
-  location: 'Junnar, Maharashtra',
+  name: 'Kura Valley Farms',
+  location: 'Kura, Kano State',
   area: 48,
-  areaUnit: 'acres',
+  areaUnit: 'hectares',
   established: 2019,
   zones: 6,
   waterSavedWeek: 18400,
 }
 
 export const fields = [
-  { name: 'North Block', crop: 'Sugarcane', variety: 'Co-86032', stage: 'Grand growth', progress: 64, health: 94, moisture: 66, plantedOn: '2026-01-12', nextAction: 'Fertigation due in 2 days', status: 'healthy' },
-  { name: 'River Plot', crop: 'Grapes', variety: 'Thompson Seedless', stage: 'Fruit set', progress: 48, health: 88, moisture: 59, plantedOn: '2025-11-03', nextAction: 'Canopy check recommended', status: 'healthy' },
-  { name: 'East Terrace', crop: 'Tomato', variety: 'Abhinav F1', stage: 'Flowering', progress: 52, health: 73, moisture: 47, plantedOn: '2026-03-21', nextAction: 'Low moisture — irrigation queued', status: 'warn' },
-  { name: 'Greenhouse 1', crop: 'Capsicum', variety: 'Indra', stage: 'Vegetative', progress: 31, health: 90, moisture: 64, plantedOn: '2026-04-18', nextAction: 'On track', status: 'healthy' },
-  { name: 'South Field', crop: 'Onion', variety: 'Bhima Red', stage: 'Bulb development', progress: 70, health: 67, moisture: 44, plantedOn: '2026-02-08', nextAction: 'Possible thrips — scan advised', status: 'alert' },
-  { name: 'West Block', crop: 'Wheat', variety: 'Lokwan', stage: 'Maturity', progress: 88, health: 92, moisture: 55, plantedOn: '2025-12-15', nextAction: 'Harvest window in ~9 days', status: 'healthy' },
+  { name: 'North Block', crop: 'Maize', variety: 'Oba Super 2', stage: 'Tasselling', progress: 64, health: 94, moisture: 66, plantedOn: '2026-05-12', nextAction: 'Top-dress urea in 2 days', status: 'healthy' },
+  { name: 'River Plot', crop: 'Rice', variety: 'FARO 44', stage: 'Panicle initiation', progress: 48, health: 88, moisture: 72, plantedOn: '2026-06-03', nextAction: 'Maintain paddy water level', status: 'healthy' },
+  { name: 'East Terrace', crop: 'Tomato', variety: 'Roma VF', stage: 'Flowering', progress: 52, health: 73, moisture: 47, plantedOn: '2026-06-21', nextAction: 'Low moisture — irrigation queued', status: 'warn' },
+  { name: 'Greenhouse 1', crop: 'Tatashe Pepper', variety: 'Sweet Red', stage: 'Vegetative', progress: 31, health: 90, moisture: 64, plantedOn: '2026-07-18', nextAction: 'On track', status: 'healthy' },
+  { name: 'South Field', crop: 'Onion', variety: 'Red Creole', stage: 'Bulb development', progress: 70, health: 67, moisture: 44, plantedOn: '2026-04-08', nextAction: 'Possible thrips — scan advised', status: 'alert' },
+  { name: 'West Block', crop: 'Cowpea', variety: 'IT90K-277-2', stage: 'Pod filling', progress: 88, health: 92, moisture: 55, plantedOn: '2026-05-15', nextAction: 'Harvest window in ~9 days', status: 'healthy' },
 ]
 
 export const sensors = [
@@ -51,14 +51,14 @@ export const tasks = [
 ]
 
 export const products = [
-  { name: 'Alphonso Mangoes', grade: 'A', price: 1200, unit: 'dozen', stock: 60, category: 'Fruit', seller: 'Shivneri Estate', trend: 6 },
-  { name: 'Thompson Grapes', grade: 'Export', price: 95, unit: 'kg', stock: 540, category: 'Fruit', seller: 'River Plot', trend: 3 },
-  { name: 'Bhima Red Onion', grade: 'B', price: 28, unit: 'kg', stock: 2100, category: 'Vegetable', seller: 'South Field', trend: -2 },
-  { name: 'Vine Tomatoes', grade: 'A', price: 34, unit: 'kg', stock: 380, category: 'Vegetable', seller: 'East Terrace', trend: 9 },
-  { name: 'Lokwan Wheat', grade: 'A', price: 32, unit: 'kg', stock: 4200, category: 'Grain', seller: 'West Block', trend: 1 },
-  { name: 'Green Capsicum', grade: 'A', price: 48, unit: 'kg', stock: 220, category: 'Vegetable', seller: 'Greenhouse 1', trend: 4 },
-  { name: 'Organic Jaggery', grade: 'Premium', price: 80, unit: 'kg', stock: 150, category: 'Processed', seller: 'North Block', trend: 7 },
-  { name: 'Sweet Corn', grade: 'A', price: 22, unit: 'piece', stock: 900, category: 'Vegetable', seller: 'Greenhouse 2', trend: 2 },
+  { name: 'Roma Tomatoes', grade: 'A', price: 1500, unit: 'kg', stock: 380, category: 'Vegetable', seller: 'East Terrace', trend: 9 },
+  { name: 'Red Creole Onion', grade: 'A', price: 1100, unit: 'kg', stock: 2100, category: 'Vegetable', seller: 'South Field', trend: -2 },
+  { name: 'Yellow Maize', grade: 'A', price: 850, unit: 'kg', stock: 4200, category: 'Grain', seller: 'North Block', trend: 4 },
+  { name: 'FARO 44 Paddy Rice', grade: 'A', price: 1250, unit: 'kg', stock: 3600, category: 'Grain', seller: 'River Plot', trend: 3 },
+  { name: 'Tatashe Pepper', grade: 'A', price: 2400, unit: 'kg', stock: 220, category: 'Vegetable', seller: 'Greenhouse 1', trend: 7 },
+  { name: 'Brown Cowpea (Beans)', grade: 'A', price: 2200, unit: 'kg', stock: 1500, category: 'Grain', seller: 'West Block', trend: 5 },
+  { name: 'Watermelon', grade: 'A', price: 900, unit: 'piece', stock: 640, category: 'Fruit', seller: 'South Field', trend: 2 },
+  { name: 'Groundnut Oil', grade: 'Premium', price: 4800, unit: 'litre', stock: 150, category: 'Processed', seller: 'North Block', trend: 6 },
 ]
 
 export const readings = [

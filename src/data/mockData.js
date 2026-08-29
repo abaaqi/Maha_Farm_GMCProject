@@ -5,11 +5,11 @@
    ============================================================ */
 
 export const farmProfile = {
-  name: 'Shivneri Estate',
+  name: 'Kura Valley Farms',
   owner: 'Abdul-Baaqi Jempeji',
-  location: 'Junnar, Maharashtra',
+  location: 'Kura, Kano State',
   area: 48,
-  areaUnit: 'acres',
+  areaUnit: 'hectares',
   established: 2019,
   zones: 6,
 }
@@ -94,86 +94,37 @@ export const sensors = [
 /* --- Field / zone cards for crop monitoring --- */
 export const fields = [
   {
-    id: 'f1',
-    name: 'North Block',
-    crop: 'Sugarcane',
-    variety: 'Co-86032',
-    stage: 'Grand growth',
-    progress: 64,
-    health: 94,
-    moisture: 66,
-    plantedOn: '2026-01-12',
-    nextAction: 'Fertigation due in 2 days',
-    status: 'healthy',
+    id: 'f1', name: 'North Block', crop: 'Maize', variety: 'Oba Super 2', stage: 'Tasselling',
+    progress: 64, health: 94, moisture: 66, plantedOn: '2026-05-12',
+    nextAction: 'Top-dress urea in 2 days', status: 'healthy',
   },
   {
-    id: 'f2',
-    name: 'River Plot',
-    crop: 'Grapes',
-    variety: 'Thompson Seedless',
-    stage: 'Fruit set',
-    progress: 48,
-    health: 88,
-    moisture: 59,
-    plantedOn: '2025-11-03',
-    nextAction: 'Canopy check recommended',
-    status: 'healthy',
+    id: 'f2', name: 'River Plot', crop: 'Rice', variety: 'FARO 44', stage: 'Panicle initiation',
+    progress: 48, health: 88, moisture: 72, plantedOn: '2026-06-03',
+    nextAction: 'Maintain paddy water level', status: 'healthy',
   },
   {
-    id: 'f3',
-    name: 'East Terrace',
-    crop: 'Tomato',
-    variety: 'Abhinav F1',
-    stage: 'Flowering',
-    progress: 52,
-    health: 73,
-    moisture: 47,
-    plantedOn: '2026-03-21',
-    nextAction: 'Low moisture — irrigation queued',
-    status: 'warn',
+    id: 'f3', name: 'East Terrace', crop: 'Tomato', variety: 'Roma VF', stage: 'Flowering',
+    progress: 52, health: 73, moisture: 47, plantedOn: '2026-06-21',
+    nextAction: 'Low moisture — irrigation queued', status: 'warn',
   },
   {
-    id: 'f4',
-    name: 'Greenhouse 1',
-    crop: 'Capsicum',
-    variety: 'Indra',
-    stage: 'Vegetative',
-    progress: 31,
-    health: 90,
-    moisture: 64,
-    plantedOn: '2026-04-18',
-    nextAction: 'On track',
-    status: 'healthy',
+    id: 'f4', name: 'Greenhouse 1', crop: 'Tatashe Pepper', variety: 'Sweet Red', stage: 'Vegetative',
+    progress: 31, health: 90, moisture: 64, plantedOn: '2026-07-18',
+    nextAction: 'On track', status: 'healthy',
   },
   {
-    id: 'f5',
-    name: 'South Field',
-    crop: 'Onion',
-    variety: 'Bhima Red',
-    stage: 'Bulb development',
-    progress: 70,
-    health: 67,
-    moisture: 44,
-    plantedOn: '2026-02-08',
-    nextAction: 'Possible thrips — scan advised',
-    status: 'alert',
+    id: 'f5', name: 'South Field', crop: 'Onion', variety: 'Red Creole', stage: 'Bulb development',
+    progress: 70, health: 67, moisture: 44, plantedOn: '2026-04-08',
+    nextAction: 'Possible thrips — scan advised', status: 'alert',
   },
   {
-    id: 'f6',
-    name: 'West Block',
-    crop: 'Wheat',
-    variety: 'Lokwan',
-    stage: 'Maturity',
-    progress: 88,
-    health: 92,
-    moisture: 55,
-    plantedOn: '2025-12-15',
-    nextAction: 'Harvest window in ~9 days',
-    status: 'healthy',
+    id: 'f6', name: 'West Block', crop: 'Cowpea', variety: 'IT90K-277-2', stage: 'Pod filling',
+    progress: 88, health: 92, moisture: 55, plantedOn: '2026-05-15',
+    nextAction: 'Harvest window in ~9 days', status: 'healthy',
   },
 ]
 
-/* --- Alerts feed --- */
 export const alerts = [
   {
     id: 'a1',
@@ -229,16 +180,16 @@ export const diseaseResults = [
       'Remove affected lower leaves. Apply a copper-based or mancozeb fungicide every 7–10 days. Improve airflow and avoid overhead watering.',
   },
   {
-    crop: 'Grape',
-    name: 'Downy Mildew',
-    pathogen: 'Plasmopara viticola',
+    crop: 'Maize',
+    name: 'Northern Leaf Blight',
+    pathogen: 'Exserohilum turcicum',
     confidence: 88,
     severity: 'High',
     treatment:
-      'Apply systemic fungicide promptly. Strip dense canopy to reduce humidity. Avoid irrigation late in the day.',
+      'Apply a mancozeb or azoxystrobin fungicide promptly. Remove infected lower leaves and rotate away from maize next season.',
   },
   {
-    crop: 'Potato',
+    crop: 'Pepper',
     name: 'Healthy',
     pathogen: '—',
     confidence: 97,
@@ -249,14 +200,14 @@ export const diseaseResults = [
 
 /* --- Marketplace listings --- */
 export const products = [
-  { id: 'p1', name: 'Alphonso Mangoes', grade: 'A', price: 1200, unit: 'dozen', stock: 60, category: 'Fruit', seller: 'Shivneri Estate', trend: +6 },
-  { id: 'p2', name: 'Thompson Grapes', grade: 'Export', price: 95, unit: 'kg', stock: 540, category: 'Fruit', seller: 'River Plot', trend: +3 },
-  { id: 'p3', name: 'Bhima Red Onion', grade: 'B', price: 28, unit: 'kg', stock: 2100, category: 'Vegetable', seller: 'South Field', trend: -2 },
-  { id: 'p4', name: 'Vine Tomatoes', grade: 'A', price: 34, unit: 'kg', stock: 380, category: 'Vegetable', seller: 'East Terrace', trend: +9 },
-  { id: 'p5', name: 'Lokwan Wheat', grade: 'A', price: 32, unit: 'kg', stock: 4200, category: 'Grain', seller: 'West Block', trend: +1 },
-  { id: 'p6', name: 'Green Capsicum', grade: 'A', price: 48, unit: 'kg', stock: 220, category: 'Vegetable', seller: 'Greenhouse 1', trend: +4 },
-  { id: 'p7', name: 'Organic Jaggery', grade: 'Premium', price: 80, unit: 'kg', stock: 150, category: 'Processed', seller: 'North Block', trend: +7 },
-  { id: 'p8', name: 'Sweet Corn', grade: 'A', price: 22, unit: 'piece', stock: 900, category: 'Vegetable', seller: 'Greenhouse 2', trend: +2 },
+  { id: 'p1', name: 'Roma Tomatoes', grade: 'A', price: 1500, unit: 'kg', stock: 380, category: 'Vegetable', seller: 'East Terrace', trend: +9 },
+  { id: 'p2', name: 'Red Creole Onion', grade: 'A', price: 1100, unit: 'kg', stock: 2100, category: 'Vegetable', seller: 'South Field', trend: -2 },
+  { id: 'p3', name: 'Yellow Maize', grade: 'A', price: 850, unit: 'kg', stock: 4200, category: 'Grain', seller: 'North Block', trend: +4 },
+  { id: 'p4', name: 'FARO 44 Paddy Rice', grade: 'A', price: 1250, unit: 'kg', stock: 3600, category: 'Grain', seller: 'River Plot', trend: +3 },
+  { id: 'p5', name: 'Tatashe Pepper', grade: 'A', price: 2400, unit: 'kg', stock: 220, category: 'Vegetable', seller: 'Greenhouse 1', trend: +7 },
+  { id: 'p6', name: 'Brown Cowpea (Beans)', grade: 'A', price: 2200, unit: 'kg', stock: 1500, category: 'Grain', seller: 'West Block', trend: +5 },
+  { id: 'p7', name: 'Watermelon', grade: 'A', price: 900, unit: 'piece', stock: 640, category: 'Fruit', seller: 'South Field', trend: +2 },
+  { id: 'p8', name: 'Groundnut Oil', grade: 'Premium', price: 4800, unit: 'litre', stock: 150, category: 'Processed', seller: 'North Block', trend: +6 },
 ]
 
 export const productCategories = ['All', 'Fruit', 'Vegetable', 'Grain', 'Processed']
@@ -271,25 +222,25 @@ export const assistantSeed = [
 
 export const assistantSuggestions = [
   'What does East Terrace need today?',
-  'Best time to irrigate grapes?',
+  'Best time to irrigate tomato?',
   'How do I treat onion thrips organically?',
-  'Fertilizer plan for sugarcane grand growth',
+  'Fertilizer plan for maize at tasselling',
 ]
 
 export const assistantCanned = {
   default:
     "Here's a quick take: based on current sensor readings, your priority today is East Terrace — soil moisture is at 47%, below the 55% comfort band for flowering tomatoes. Auto-irrigation is already queued for the next window. I'd also scan South Field, where the vision model flagged possible thrips.",
   irrigate:
-    'For Thompson grapes at fruit set, irrigate early morning (5–7 AM) so foliage dries quickly and humidity stays low — this lowers downy-mildew risk. Keep soil moisture in the 55–65% band and avoid evening watering.',
+    'For tomato at flowering, irrigate early morning (5–7 AM) so foliage dries quickly and humidity stays low — this lowers blight risk in Kano humidity. Keep soil moisture in the 55–65% band and avoid evening watering.',
   thrips:
     'Organic thrips control for onion: 1) Introduce predatory mites or lacewings. 2) Spray neem oil (azadirachtin) at dusk every 5–7 days. 3) Use blue sticky traps to monitor. 4) Avoid excess nitrogen, which fuels soft growth thrips prefer.',
   fertilizer:
-    'Sugarcane in grand growth is the peak-demand phase. Split nitrogen into 2–3 doses, keep potassium steady for cane girth, and run fertigation in short cycles to limit leaching. Your North Block fertigation is scheduled for 16:00 today.',
+    'Maize at tasselling is the peak-demand phase. Split nitrogen into 2–3 doses (urea top-dressing), keep potassium steady for grain fill, and fertigate in short cycles to limit leaching during the rains. Your North Block fertigation is scheduled for 16:00 today.',
 }
 
 /* --- Weather: current + 7-day forecast + advisories --- */
 export const weatherNow = {
-  place: 'Junnar, Maharashtra',
+  place: 'Kura, Kano State',
   temp: 31,
   condition: 'Partly cloudy',
   feelsLike: 34,
@@ -324,7 +275,7 @@ export const weatherAdvisories = [
     id: 'w2',
     severity: 'info',
     title: 'High UV through Saturday',
-    body: 'UV index 8. Good drying conditions for harvested wheat; ensure greenhouse shade nets are deployed midday.',
+    body: 'UV index 8. Good drying conditions for harvested maize and cowpea; ensure greenhouse shade nets are deployed midday.',
     icon: 'sun',
   },
 ]
@@ -364,7 +315,7 @@ export const features = [
   {
     icon: 'store',
     title: 'Direct marketplace',
-    text: 'List produce, watch live price signals, and sell straight to buyers without the mandi middle layer.',
+    text: 'List produce, watch live price signals, and sell straight to buyers without middlemen taking the margin.',
   },
   {
     icon: 'sparkles',

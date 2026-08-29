@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Icon from './icons.jsx'
 import Sidebar from './Sidebar.jsx'
 import { useAuth } from '../context/AuthContext.jsx'
@@ -19,9 +19,15 @@ const titles = {
 export default function DashboardLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
-  const { farm } = useAuth()
+  const navigate = useNavigate()
+  const { farm, logout } = useAuth()
   const meta = titles[pathname] || { title: 'MahaFarm', sub: '' }
   const location = farm?.location || farmProfile.location
+
+  async function handleLogout() {
+    await logout()
+    navigate('/login')
+  }
 
   return (
     <div className="app-shell">
@@ -56,6 +62,10 @@ export default function DashboardLayout() {
               <Icon name="map-pin" size={15} />
               <span>{location}</span>
             </div>
+            <button className="topbar-logout" onClick={handleLogout}>
+              <Icon name="log-out" size={17} />
+              <span>Log out</span>
+            </button>
           </div>
         </header>
 

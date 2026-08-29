@@ -87,7 +87,7 @@ export default function Landing() {
                   <span className="hero-card-dotrow">
                     <i /><i /><i />
                   </span>
-                  <span className="hero-card-title">Shivneri Estate · Live</span>
+                  <span className="hero-card-title">Kura Valley Farms · Live</span>
                 </div>
                 <span className="badge badge-live on-dark">
                   <span className="badge-dot" />
@@ -149,9 +149,9 @@ export default function Landing() {
       {/* -------------------------- TRUST STRIP -------------------------- */}
       <section className="trust">
         <div className="shell trust-inner">
-          <span className="trust-label">Built for the way Maharashtra farms</span>
+          <span className="trust-label">Built for the way Nigeria farms</span>
           <div className="trust-items">
-            {['Sugarcane', 'Grapes', 'Onion', 'Tomato', 'Wheat', 'Pomegranate'].map((c) => (
+            {['Maize', 'Rice', 'Tomato', 'Onion', 'Cowpea', 'Pepper'].map((c) => (
               <span key={c} className="trust-item">
                 <Icon name="sprout" size={15} />
                 {c}
@@ -234,7 +234,7 @@ export default function Landing() {
               { v: '32%', l: 'water saved', tone: 'a' },
               { v: '8 days', l: 'earlier disease alerts', tone: 'b' },
               { v: '18%', l: 'avg yield lift', tone: 'a' },
-              { v: '₹0', l: 'mandi commission', tone: 'b' },
+              { v: '₦0', l: 'market commission', tone: 'b' },
             ].map((f) => (
               <div key={f.l} className={`impact-fig tone-${f.tone}`}>
                 <span className="impact-fig-v mono">{f.v}</span>

@@ -52,7 +52,7 @@ export default function Register() {
             <li><Icon name="check" size={15} /> Set up in a weekend</li>
           </ul>
         </div>
-        <div className="auth-aside-foot mono">Cultivated in Maharashtra</div>
+        <div className="auth-aside-foot mono">Built in Nigeria</div>
       </aside>
 
       <main className="auth-main">
@@ -93,7 +93,7 @@ export default function Register() {
                   <input
                     type="text"
                     required
-                    placeholder="Shivneri Estate"
+                    placeholder="Kura Valley Farms"
                     value={form.farm}
                     onChange={(e) => setForm({ ...form, farm: e.target.value })}
                   />

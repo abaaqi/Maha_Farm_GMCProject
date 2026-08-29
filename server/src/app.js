@@ -12,11 +12,23 @@ import { apiLimiter } from './middleware/rateLimiter.js'
 
 const app = express()
 
+// Allowed browser origins for CORS. CLIENT_URL may be a single origin or a
+// comma-separated list (e.g. "http://localhost:5173,https://app.netlify.app").
+const allowedOrigins = env.clientUrl
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean)
+
 // --- Security & parsing ---
 app.use(helmet())
 app.use(
   cors({
-    origin: env.clientUrl, // allow the Phase 1 frontend
+    origin(origin, cb) {
+      // Allow same-origin / curl / server-to-server (no Origin header),
+      // and any explicitly allow-listed frontend origin.
+      if (!origin || allowedOrigins.includes(origin)) return cb(null, true)
+      return cb(null, false)
+    },
     credentials: true, // allow the session cookie
   })
 )

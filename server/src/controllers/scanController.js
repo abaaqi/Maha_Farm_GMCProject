@@ -17,16 +17,16 @@ const POOL = [
       'Remove affected lower leaves. Apply a copper-based or mancozeb fungicide every 7–10 days. Improve airflow and avoid overhead watering.',
   },
   {
-    crop: 'Grape',
-    disease: 'Downy Mildew',
-    pathogen: 'Plasmopara viticola',
+    crop: 'Maize',
+    disease: 'Northern Leaf Blight',
+    pathogen: 'Exserohilum turcicum',
     confidence: 88,
     severity: 'High',
     treatment:
-      'Apply systemic fungicide promptly. Strip dense canopy to reduce humidity. Avoid irrigation late in the day.',
+      'Apply a mancozeb or azoxystrobin fungicide promptly. Remove infected lower leaves and rotate away from maize next season. Avoid overhead irrigation late in the day.',
   },
   {
-    crop: 'Potato',
+    crop: 'Pepper',
     disease: 'Healthy',
     pathogen: '—',
     confidence: 97,

@@ -1,0 +1,16 @@
+{
+  "name": "mahafarm-bridge",
+  "version": "1.0.0",
+  "description": "USB serial bridge: reads Arduino sensor data and posts it to the MahaFarm API; relays commands back to the board.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "list-ports": "node -e \"import('serialport').then(({SerialPort})=>SerialPort.list().then(ps=>ps.forEach(p=>console.log(p.path, p.manufacturer||''))))\""
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^12.0.0",
+    "dotenv": "^16.4.5",
+    "serialport": "^12.0.0"
+  }
+}

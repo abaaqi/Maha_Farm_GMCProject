@@ -64,7 +64,7 @@ export default function Login() {
             <li><Icon name="check" size={15} /> Disease scans in seconds</li>
           </ul>
         </div>
-        <div className="auth-aside-foot mono">Shivneri Estate · Junnar, MH</div>
+        <div className="auth-aside-foot mono">Kura Valley Farms · Kano State, NG</div>
       </aside>
 
       {/* Form side */}

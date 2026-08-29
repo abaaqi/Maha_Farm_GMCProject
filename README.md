@@ -173,6 +173,22 @@ mahafarm/
 
 ---
 
+## 🔌 Hardware / IoT (optional) — [`hardware/`](./hardware)
+
+MahaFarm can read from real sensors and drive real actuators via an Arduino.
+Using the **USB serial bridge** (no WiFi needed), an Arduino streams readings that
+update the live dashboard tiles, and the app can switch the irrigation relay.
+
+- [`hardware/HARDWARE.md`](./hardware/HARDWARE.md) — full guide: component map, wiring, setup
+- [`hardware/arduino/`](./hardware/arduino) — Arduino sketches (field node + RFID)
+- [`hardware/bridge/`](./hardware/bridge) — Node USB→API bridge
+
+New API endpoints support this: `POST /api/device/ingest` and `GET /api/device/commands`
+(device-key auth), `POST /api/commands` (queue a hardware action), and
+`GET /api/export/:resource` (download any collection as CSV).
+
+---
+
 ## 📝 Notes
 
 - Mock data is intentionally shaped like the API payload, so flipping

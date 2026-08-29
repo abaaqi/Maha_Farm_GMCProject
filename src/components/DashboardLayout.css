@@ -155,3 +155,33 @@
     padding: 18px;
   }
 }
+
+/* --- Topbar logout button --- */
+.topbar-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: var(--r-pill);
+  background: #fff;
+  border: 1px solid var(--line-light);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.18s var(--ease);
+}
+
+.topbar-logout:hover {
+  border-color: var(--berry);
+  color: var(--berry);
+  background: rgba(194, 73, 94, 0.05);
+}
+
+@media (max-width: 720px) {
+  .topbar-logout span {
+    display: none;
+  }
+  .topbar-logout {
+    padding: 9px;
+  }
+}

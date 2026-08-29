@@ -81,7 +81,7 @@ export default function Footer() {
       </div>
 
       <div className="shell footer-bottom">
-        <span>© {new Date().getFullYear()} MahaFarm. Cultivated in Maharashtra.</span>
+        <span>© {new Date().getFullYear()} MahaFarm. Built in Nigeria.</span>
         <div className="footer-bottom-links">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>

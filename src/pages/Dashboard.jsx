@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis,
@@ -6,6 +7,8 @@ import {
 import Icon from '../components/icons.jsx'
 import { StatCard, SensorCard, ProgressRing } from '../components/ui.jsx'
 import { useResource } from '../hooks/useResource.js'
+import { api } from '../lib/api.js'
+import { USE_MOCK } from '../lib/config.js'
 import {
   kpis as mockKpis, sensors as mockSensors, moistureSeries as mockMoisture,
   waterSeries as mockWater, alerts as mockAlerts, schedule as mockSchedule, fields as mockFields,
@@ -49,6 +52,24 @@ export default function Dashboard() {
     alerts = [], schedule = [], attention: attentionAll = [],
   } = data || {}
   const attention = attentionAll.slice(0, 3)
+  const [irrigation, setIrrigation] = useState({ busy: false, msg: '' })
+
+  /* Queues a real hardware command (POST /api/commands). The USB serial bridge
+     polls it and switches the irrigation relay on the Arduino. */
+  async function irrigateNow() {
+    setIrrigation({ busy: true, msg: '' })
+    try {
+      if (!USE_MOCK) {
+        await api.post('/commands', {
+          type: 'relay', target: 'pump', state: 'on', durationSec: 30, zone: 'East Terrace',
+        })
+      }
+      setIrrigation({ busy: false, msg: 'Command queued — pump running 30s on East Terrace' })
+    } catch (err) {
+      setIrrigation({ busy: false, msg: `Could not queue command: ${err.message}` })
+    }
+    setTimeout(() => setIrrigation((s) => ({ ...s, msg: '' })), 6000)
+  }
 
   return (
     <div className="page-stack dashboard-page">
@@ -172,6 +193,15 @@ export default function Dashboard() {
               <span className="badge-dot" /> {schedule.filter((s) => s.auto).length} auto
             </span>
           </div>
+          <button className="irrigate-btn" onClick={irrigateNow} disabled={irrigation.busy}>
+            <Icon name="droplets" size={16} />
+            {irrigation.busy ? 'Sending…' : 'Irrigate now'}
+          </button>
+          {irrigation.msg && (
+            <p className="irrigate-msg">
+              <Icon name="check" size={13} /> {irrigation.msg}
+            </p>
+          )}
           <ul className="schedule-list">
             {schedule.map((t) => (
               <li key={t.id} className="schedule-item">

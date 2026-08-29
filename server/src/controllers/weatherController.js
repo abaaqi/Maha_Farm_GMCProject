@@ -7,7 +7,7 @@ import { asyncHandler } from '../utils/asyncHandler.js'
  */
 const WEATHER = {
   now: {
-    place: 'Junnar, Maharashtra',
+    place: 'Kura, Kano State',
     temp: 31,
     condition: 'Partly cloudy',
     feelsLike: 34,
@@ -29,8 +29,8 @@ const WEATHER = {
     { day: 'Thu', icon: 'cloud-sun', hi: 32, lo: 22, rain: 25, condition: 'Cloudy' },
   ],
   advisories: [
-    { id: 'w1', severity: 'warn', icon: 'cloud-rain', title: 'Heavy rain expected Sun–Mon', body: '70–80% chance of showers. Pause scheduled irrigation and check drainage on low-lying fields.' },
-    { id: 'w2', severity: 'info', icon: 'sun', title: 'High UV through Saturday', body: 'UV index 8. Good drying conditions for harvested grain; deploy greenhouse shade nets midday.' },
+    { id: 'w1', severity: 'warn', icon: 'cloud-rain', title: 'Heavy rain expected Sun–Mon', body: '70–80% chance of showers. Pause scheduled irrigation and check drainage on the rice plot and low-lying fields.' },
+    { id: 'w2', severity: 'info', icon: 'sun', title: 'High UV through Saturday', body: 'UV index 8. Good drying conditions for harvested maize and cowpea; deploy greenhouse shade nets midday.' },
   ],
 }
 
