@@ -12,6 +12,7 @@ import DiseaseDetection from './pages/DiseaseDetection.jsx'
 import Marketplace from './pages/Marketplace.jsx'
 import Assistant from './pages/Assistant.jsx'
 import Weather from './pages/Weather.jsx'
+import Foresight from './pages/Foresight.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 /**
@@ -46,6 +47,7 @@ export default function App() {
           }
         >
           <Route index element={<Dashboard />} />
+          <Route path="foresight" element={<Foresight />} />
           <Route path="crops" element={<CropMonitoring />} />
           <Route path="scan" element={<DiseaseDetection />} />
           <Route path="market" element={<Marketplace />} />

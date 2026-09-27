@@ -8,6 +8,7 @@ import './DashboardLayout.css'
 
 const titles = {
   '/app': { title: 'Overview', sub: 'Everything happening across your farm, right now.' },
+  '/app/foresight': { title: 'Foresight', sub: 'Predict water need and disease risk — no sensors required.' },
   '/app/crops': { title: 'Crop monitoring', sub: 'Health, stage, and moisture for every field.' },
   '/app/scan': { title: 'Disease scan', sub: 'Upload a leaf and let vision AI diagnose it.' },
   '/app/weather': { title: 'Weather & alerts', sub: 'Forecast and advisories tuned to your crops.' },

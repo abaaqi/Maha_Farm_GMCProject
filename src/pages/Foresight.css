@@ -1,0 +1,528 @@
+/* ============================================================================
+ * Foresight — screen styles.
+ * Uses the existing MahaFarm design tokens so the new screen is
+ * indistinguishable from the rest of the product.
+ * ==========================================================================*/
+
+.fs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ------------------------------ Form ------------------------------ */
+.fs-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.fs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.fs-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.fs-field select,
+.fs-field input {
+  padding: 11px 13px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  background: #fff;
+  font-size: 0.92rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+  width: 100%;
+}
+
+.fs-field select:focus,
+.fs-field input:focus {
+  border-color: var(--leaf-500);
+  box-shadow: 0 0 0 3px rgba(47, 148, 98, 0.12);
+}
+
+.fs-run {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-width: 220px;
+}
+
+.fs-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 11px 14px;
+  border-radius: var(--r-md);
+  background: rgba(194, 73, 94, 0.1);
+  border: 1px solid rgba(194, 73, 94, 0.25);
+  color: var(--berry);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* --------------------------- Empty / loading --------------------------- */
+.fs-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 60px 24px;
+}
+
+.fs-empty svg {
+  color: var(--leaf-500);
+}
+
+.fs-empty h3 {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.fs-empty p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.fs-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid var(--line-light);
+  border-top-color: var(--leaf-500);
+  animation: fs-spin 0.8s linear infinite;
+}
+
+@keyframes fs-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ----------------------------- Verdict ----------------------------- */
+.fs-verdict-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.fs-verdict {
+  position: relative;
+  border-radius: var(--r-lg);
+  padding: 28px;
+  overflow: hidden;
+  background: var(--soil-900);
+  border: 1px solid var(--line-dark);
+}
+
+.fs-verdict.is-irrigate {
+  background: linear-gradient(135deg, var(--soil-900), var(--leaf-700));
+}
+
+.fs-verdict-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--sprout);
+}
+
+.fs-verdict-title {
+  font-size: 2.6rem;
+  color: var(--cloud);
+  letter-spacing: -0.03em;
+  margin: 8px 0 4px;
+  line-height: 1;
+}
+
+.fs-verdict-figure {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--sprout);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.fs-verdict-figure span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cloud-soft);
+  margin-left: 6px;
+}
+
+.fs-verdict-why {
+  font-size: 0.95rem;
+  color: var(--cloud-soft);
+  line-height: 1.6;
+  margin-top: 12px;
+  max-width: 460px;
+}
+
+.fs-verdict-why strong {
+  color: var(--cloud);
+}
+
+.fs-verdict-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.fs-verdict-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--cloud-faint);
+}
+
+/* ----------------------------- Impact ----------------------------- */
+.fs-impact-stack {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.fs-impact {
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.fs-impact-label {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.fs-impact-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--leaf-600);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.fs-impact-sub {
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+
+/* ---------------------------- Advisory ---------------------------- */
+.fs-advisory .panel-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fs-advisory .panel-title svg {
+  color: var(--leaf-600);
+}
+
+.fs-advisory-body {
+  background: var(--paper);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  padding: 20px 22px;
+}
+
+.fs-advisory-para {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.fs-advisory-para + .fs-advisory-para {
+  margin-top: 14px;
+}
+
+.fs-advisory-para strong {
+  color: var(--leaf-700);
+  font-weight: 700;
+}
+
+.fs-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.fs-note svg {
+  flex-shrink: 0;
+  color: var(--harvest);
+}
+
+/* ---------------------------- Disease ---------------------------- */
+.fs-disease-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.fs-disease {
+  border: 1px solid var(--line-light);
+  border-top: 3px solid var(--leaf-500);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fs-disease.tone-warn { border-top-color: var(--harvest); }
+.fs-disease.tone-alert { border-top-color: var(--berry); }
+
+.fs-disease-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fs-disease-head h3 {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.fs-disease-score {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.fs-disease-score span {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.fs-disease-score small {
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+
+/* 7-day sparkline of daily risk */
+.fs-spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 78px;
+}
+
+.fs-spark-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(to top, var(--paper-2), var(--paper));
+  border-radius: 4px;
+  padding-bottom: 14px;
+}
+
+.fs-spark-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: var(--leaf-400);
+  min-height: 2px;
+  transition: height 0.5s var(--ease);
+}
+
+.fs-spark-bar.tone-warn { background: var(--harvest); }
+.fs-spark-bar.tone-alert { background: var(--berry); }
+.fs-spark-bar.tone-healthy { background: var(--leaf-400); }
+
+.fs-spark-tick {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--ink-faint);
+}
+
+.fs-disease-lead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.fs-disease-lead svg {
+  color: var(--ink-faint);
+}
+
+.fs-disease-action {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ------------------------------ Week ------------------------------ */
+.fs-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.fs-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 16px 8px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line-light);
+  background: var(--paper);
+  text-align: center;
+}
+
+.fs-day.is-irrigate {
+  background: rgba(47, 148, 98, 0.07);
+  border-color: rgba(47, 148, 98, 0.3);
+}
+
+.fs-day-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.fs-day-icon {
+  color: var(--harvest);
+}
+
+.fs-day-temp {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.fs-day-rain {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.74rem;
+  color: var(--leaf-600);
+}
+
+.fs-day-litres {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--leaf-700);
+  padding-top: 6px;
+  border-top: 1px solid var(--line-light);
+  width: 100%;
+}
+
+.fs-day-litres.is-zero {
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+/* --------------------------- Provenance --------------------------- */
+.fs-provenance .panel-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fs-provenance .panel-title svg {
+  color: var(--leaf-600);
+}
+
+.fs-prov-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.fs-prov-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--leaf-600);
+  margin-bottom: 6px;
+}
+
+.fs-prov-grid p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.fs-prov-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fs-prov-list li {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.fs-prov-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--leaf-500);
+}
+
+/* ---------------------------- Responsive ---------------------------- */
+@media (max-width: 1100px) {
+  .fs-verdict-row { grid-template-columns: 1fr; }
+  .fs-impact-stack { grid-template-rows: none; grid-template-columns: repeat(3, 1fr); }
+  .fs-week { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .fs-form { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px) {
+  .fs-form { grid-template-columns: 1fr; }
+  .fs-run { width: 100%; }
+  .fs-impact-stack { grid-template-columns: 1fr; }
+  .fs-week { grid-template-columns: repeat(2, 1fr); }
+  .fs-verdict-title { font-size: 2.1rem; }
+  .fs-verdict-figure { font-size: 2.1rem; }
+}

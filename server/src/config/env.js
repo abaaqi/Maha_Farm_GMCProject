@@ -21,6 +21,14 @@ export const env = {
   deviceKey: process.env.DEVICE_KEY || '',
   // Optional: pin device readings to a specific farm (defaults to the first farm).
   deviceFarmId: process.env.DEVICE_FARM_ID || '',
+
+  // --- Foresight AI layer ---------------------------------------------------
+  // Any OpenAI-compatible chat endpoint: NVIDIA Build, Groq, OpenAI, or a local
+  // Ollama / LM Studio server. With no key the advisory falls back to the
+  // deterministic rules engine, so the feature always works.
+  llmApiKey: process.env.LLM_API_KEY || '',
+  llmBaseUrl: process.env.LLM_BASE_URL || 'https://integrate.api.nvidia.com/v1',
+  llmModel: process.env.LLM_MODEL || 'meta/llama-3.1-70b-instruct',
 }
 
 export const isProd = env.nodeEnv === 'production'

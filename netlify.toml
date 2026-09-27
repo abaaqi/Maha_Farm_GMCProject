@@ -1,3 +1,10 @@
+# Netlify config for the MahaFarm frontend (Vite SPA).
+#
+# Set these in Netlify → Site configuration → Environment variables:
+#   VITE_ENABLE_MOCK_DATA = false
+#   VITE_API_BASE_URL     = https://YOUR-API.onrender.com/api
+#       (or "/api" if you enable the API proxy block below)
+
 [build]
   command = "npm run build"
   publish = "dist"
@@ -5,14 +12,20 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# API proxy — MUST come before the SPA fallback
-[[redirects]]
-  from = "/api/*"
-  to = "https://gmc-project-complete.onrender.com/api/:splat"
-  status = 200
-  force = true
+# --- Recommended: proxy /api to your backend so the browser stays same-origin
+# (no CORS, first-party login cookies). To use it:
+#   1) uncomment the block below
+#   2) replace the URL with your Render API
+#   3) set VITE_API_BASE_URL = /api  in the env vars
+# It MUST come before the SPA fallback so it matches first.
+#
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://YOUR-API.onrender.com/api/:splat"
+#   status = 200
+#   force = true
 
-# SPA fallback
+# SPA fallback — every other route serves index.html (client-side routing)
 [[redirects]]
   from = "/*"
   to = "/index.html"

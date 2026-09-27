@@ -173,6 +173,22 @@ mahafarm/
 
 ---
 
+## 🌦️ Foresight — AI advisory, no sensors required ([FORESIGHT.md](./FORESIGHT.md))
+
+Built for the GOMYCODE × NVIDIA *Come Build with AI* hackathon. A farmer names a location
+and a crop; Foresight pulls free weather and evapotranspiration data, runs an FAO-56 water
+balance, scores seven days of disease-infection risk, and an LLM writes the plan in English
+or Hausa.
+
+- **Removes the hardware barrier** — no probes to buy, install or maintain
+- **Measurable impact** — litres saved vs a fixed schedule, and the ₦ value, on every run
+- **Maths and language kept separate** — the model explains the figures, it never calculates
+- **Degrades honestly** — climatology and rules-engine fallbacks, both labelled in the UI
+
+`POST /api/foresight` · public by design · screen at `/app/foresight`
+
+---
+
 ## 🔌 Hardware / IoT (optional) — [`hardware/`](./hardware)
 
 MahaFarm can read from real sensors and drive real actuators via an Arduino.

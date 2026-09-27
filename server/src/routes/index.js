@@ -12,6 +12,7 @@ import assistantRoutes from './assistantRoutes.js'
 import deviceRoutes from './deviceRoutes.js'
 import commandRoutes from './commandRoutes.js'
 import exportRoutes from './exportRoutes.js'
+import foresightRoutes from './foresightRoutes.js'
 
 const router = Router()
 
@@ -28,6 +29,7 @@ router.get('/', (req, res) => {
       dashboard: 'GET /api/dashboard/summary',
       weather: 'GET /api/weather',
       assistant: 'POST /api/assistant',
+      foresight: 'POST /api/foresight · GET /api/foresight/options · GET /api/foresight/history',
     },
   })
 })
@@ -50,5 +52,6 @@ router.use('/assistant', assistantRoutes)
 router.use('/device', deviceRoutes)       // hardware ingest + command polling (device key)
 router.use('/commands', commandRoutes)    // app queues hardware commands (user)
 router.use('/export', exportRoutes)       // CSV downloads (user)
+router.use('/foresight', foresightRoutes) // AI advisory engine (public — no sensors, no login)
 
 export default router

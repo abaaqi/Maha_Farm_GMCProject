@@ -283,6 +283,7 @@ export const weatherAdvisories = [
 /* --- Sidebar navigation model --- */
 export const navItems = [
   { to: '/app', label: 'Overview', icon: 'layout-dashboard', end: true },
+  { to: '/app/foresight', label: 'Foresight', icon: 'line-chart', badge: 'AI' },
   { to: '/app/crops', label: 'Crop monitoring', icon: 'sprout' },
   { to: '/app/scan', label: 'Disease scan', icon: 'scan-line', badge: 'AI' },
   { to: '/app/weather', label: 'Weather', icon: 'cloud-sun' },
